@@ -1,5 +1,6 @@
 $blue-500: #3ab8eb;
 $gray-800: #3d3c3c;
+$orange-500: #f9784b;
 $yellow-500: rgb(253, 191, 15);
 $gray-600: rgb(103, 103, 103);
 @mixin unica-one {
@@ -10,7 +11,7 @@ $gray-600: rgb(103, 103, 103);
 @mixin syne {
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
