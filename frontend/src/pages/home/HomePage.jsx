@@ -3,8 +3,9 @@ import SearchComponent from '../../components/search/SearchComponent';
 import Footer from '../../components/footer/Footer';
 import './HomePage.scss';
 import { img } from './importsHome.js';
-import { Binoculars } from '@phosphor-icons/react';
+import { Binoculars, FolderNotchOpen } from '@phosphor-icons/react';
 import BookComponent from '../../components/book/BookComponent.jsx';
+import CategoryButtonComponent from '../../components/category_button/CategoryButtonComponent.jsx';
 
 const HomePage = () => {
   return (
@@ -39,6 +40,20 @@ const HomePage = () => {
             <BookComponent />
             <BookComponent />
             <BookComponent />
+          </div>
+        </div>
+        <div className='content__categories'>
+          <div className='content__title'>
+            <FolderNotchOpen size={32} />
+            <h3 className='title'>Categories</h3>
+          </div>
+          <div className='content__list-category'>
+            <CategoryButtonComponent />
+            <CategoryButtonComponent />
+            <CategoryButtonComponent />
+            <CategoryButtonComponent />
+            <CategoryButtonComponent />
+            <CategoryButtonComponent />
           </div>
         </div>
       </main>
