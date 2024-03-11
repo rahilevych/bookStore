@@ -1,8 +1,6 @@
 @import "../../global";
 
-.content {
-    margin: 0 auto;
-    width: 100%;
+.home {
     &__header {
         display: flex;
         flex-direction: row;
@@ -110,7 +108,7 @@
     &__categories {
         margin-top: 10rem;
     }
-    &__list-category {
+    &__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -129,16 +127,8 @@
             margin-left: 0.75rem;
         }
     }
-    &__category-book {
+    &__category {
         margin-top: 10rem;
-    }
-    &__category-slider {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 4.5rem;
-        margin-top: 3.25rem;
     }
 }
 @media only screen and (max-width: 1439px) {

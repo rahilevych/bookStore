@@ -8,38 +8,39 @@ import BookComponent from '../../components/book/BookComponent.jsx';
 import CategoryButtonComponent from '../../components/category_button/CategoryButtonComponent.jsx';
 import CategoryBookComponent from '../../components/categoty_book/CategoryBookComponent.jsx';
 import { Link } from 'react-router-dom';
+import BooksSlider from '../../components/books_slider/BooksSlider.jsx';
 
 const HomePage = () => {
   return (
     <div className='container'>
       <Header />
-      <main className='content'>
-        <div className='content__header'>
-          <div className='content__search'>
+      <main className='content home'>
+        <div className='home__header'>
+          <div className='home__search'>
             <h1>What book are you looking for?</h1>
             <p>Explore our catalog and find your next read.</p>
             <SearchComponent />
-            <div className='content__explore'>
+            <div className='home__explore'>
               <Link to='/catalog'>
-                <button className='content__button'>
+                <button className='home__button'>
                   Explore
-                  <Binoculars className='content__icon' size={32} />
+                  <Binoculars className='home__icon' size={32} />
                 </button>
               </Link>
 
               <hr />
             </div>
           </div>
-          <div className='content__img'>
+          <div className='home__img'>
             <img src={img} alt='' />
           </div>
         </div>
-        <div className='content__trending'>
-          <div className='content__text'>
+        <div className='home__trending'>
+          <div className='home__text'>
             <h3 className='title'>Trending Books</h3>
             <p>Drag to explore</p>
           </div>
-          <div className='content__slider'>
+          <div className='home__slider'>
             <BookComponent />
             <BookComponent />
             <BookComponent />
@@ -47,12 +48,12 @@ const HomePage = () => {
             <BookComponent />
           </div>
         </div>
-        <div className='content__categories'>
-          <div className='content__title'>
+        <div className='home__categories'>
+          <div className='home__title'>
             <FolderNotchOpen size={32} />
             <h3 className='title'>Categories</h3>
           </div>
-          <div className='content__list-category'>
+          <div className='home__list'>
             <CategoryButtonComponent />
             <CategoryButtonComponent />
             <CategoryButtonComponent />
@@ -61,31 +62,19 @@ const HomePage = () => {
             <CategoryButtonComponent />
           </div>
         </div>
-        <div className='content__category-book'>
-          <div className='content__title'>
+        <div className='home__category'>
+          <div className='home__title'>
             <FolderNotchOpen size={32} />
             <h3 className='title'>Romance</h3>
           </div>
-          <div className='content__category-slider'>
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-          </div>
+          <BooksSlider />
         </div>
-        <div className='content__category-book'>
-          <div className='content__title'>
+        <div className='home__category'>
+          <div className='home__title'>
             <FolderNotchOpen size={32} />
             <h3 className='title'>Adventure</h3>
           </div>
-          <div className='content__category-slider'>
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-            <CategoryBookComponent />
-          </div>
+          <BooksSlider />
         </div>
       </main>
       <Footer />

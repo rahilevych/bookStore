@@ -1,0 +1,136 @@
+@import "../../global.scss";
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__book {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60rem;
+        height: 30.25rem;
+        margin-top: 6.8rem;
+        .book {
+            flex: 0 0 auto;
+            margin-right: 9.4rem;
+            width: 17.5rem;
+            height: 26rem;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 1.5rem;
+        flex: 1 1 auto;
+        height: 100%;
+        width: 100%;
+    }
+    &__name {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        p {
+            font-size: 2.25rem;
+            @include unica-one;
+            text-transform: uppercase;
+            color: $gray-800;
+        }
+    }
+    &__author,
+    &__about {
+        padding: 0 1.6rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: baseline;
+        width: 32rem;
+        border: 2px dashed $gray-600;
+        border-radius: 20px;
+        background-color: $bg-btn-color;
+        color: $gray-600;
+        @include syne;
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-color: $gray-600;
+            border-radius: 20px;
+        }
+    }
+    &__author {
+        height: 4rem;
+        &::before {
+            left: 1.68%;
+            right: 0.57%;
+            top: 10.47%;
+            bottom: -6.06%;
+        }
+    }
+    &__about {
+        height: 10.25rem;
+        &::before {
+            left: 2.25%;
+            top: 4.41%;
+        }
+    }
+    &__price {
+        margin-top: 1.5rem;
+        p {
+            color: $orange-500;
+            font-size: 2.25rem;
+            line-height: 43px;
+            @include syne;
+        }
+    }
+    &__amount,
+    &__purchase {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__purchase {
+        .cart-btn {
+            width: 255px;
+        }
+    }
+    &__buy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 255px;
+        height: 46px;
+        border: 2px solid $gray-800;
+        border-radius: 20px;
+        background-color: $orange-500;
+        margin-top: 10px;
+        transition: background-color 0.5s ease;
+        &:hover {
+            background-color: $yellow-500;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: auto;
+        h3 {
+            margin-left: 0.75rem;
+        }
+    }
+    &__slider {
+        margin-top: 10rem;
+    }
+}

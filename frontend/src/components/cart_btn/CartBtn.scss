@@ -1,0 +1,16 @@
+@import "../../global.scss";
+.cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 46px;
+    border: 2px solid $gray-800;
+    border-radius: 20px;
+    background-color: $yellow-500;
+    margin-top: 10px;
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: $orange-500;
+    }
+}

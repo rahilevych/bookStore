@@ -1,0 +1,19 @@
+@import "../../global.scss";
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 57px;
+    height: 46px;
+    border: 2px solid $gray-800;
+    border-radius: 20px;
+    background: $bg-btn-color;
+    transition:
+        color 0.5s ease,
+        background-color 0.5s ease;
+    &:hover {
+        background: $blue-500;
+        color: white;
+    }
+}
