@@ -7,6 +7,7 @@ import { Binoculars, FolderNotchOpen } from '@phosphor-icons/react';
 import BookComponent from '../../components/book/BookComponent.jsx';
 import CategoryButtonComponent from '../../components/category_button/CategoryButtonComponent.jsx';
 import CategoryBookComponent from '../../components/categoty_book/CategoryBookComponent.jsx';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -19,10 +20,13 @@ const HomePage = () => {
             <p>Explore our catalog and find your next read.</p>
             <SearchComponent />
             <div className='content__explore'>
-              <button className='content__button'>
-                Explore
-                <Binoculars className='content__icon' size={32} />
-              </button>
+              <Link to='/catalog'>
+                <button className='content__button'>
+                  Explore
+                  <Binoculars className='content__icon' size={32} />
+                </button>
+              </Link>
+
               <hr />
             </div>
           </div>

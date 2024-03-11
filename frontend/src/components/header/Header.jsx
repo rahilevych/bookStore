@@ -1,6 +1,7 @@
 import { logo } from './imports';
 import './Header.scss';
 import { BookmarkSimple, ShoppingCartSimple } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,8 +10,15 @@ const Header = () => {
         <img src={logo} alt='logo' />
       </div>
       <div className='header__nav'>
-        <BookmarkSimple className='header__saved' size={32} />
-        <ShoppingCartSimple className='header__cart' size={32} />
+        <Link to='/favorites'>
+          <button>
+            <BookmarkSimple className='header__saved' size={32} />
+          </button>
+        </Link>
+
+        <button>
+          <ShoppingCartSimple className='header__cart' size={32} />
+        </button>
       </div>
     </div>
   );

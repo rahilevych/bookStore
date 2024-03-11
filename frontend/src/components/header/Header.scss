@@ -15,6 +15,11 @@
         justify-content: end;
         align-items: center;
         flex-direction: row;
+        button {
+            background: transparent;
+            height: 100%;
+            border: none;
+        }
     }
     &__cart {
         margin-left: 1.5rem;
