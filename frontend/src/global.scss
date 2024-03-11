@@ -33,6 +33,11 @@ html {
 .content {
   flex: 1 0 auto;
 }
+.title {
+  @include unica-one;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
 
 @media only screen and (max-width: 1439px) {
   .container {
