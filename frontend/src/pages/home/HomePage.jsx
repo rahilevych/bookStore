@@ -6,6 +6,7 @@ import { img } from './importsHome.js';
 import { Binoculars, FolderNotchOpen } from '@phosphor-icons/react';
 import BookComponent from '../../components/book/BookComponent.jsx';
 import CategoryButtonComponent from '../../components/category_button/CategoryButtonComponent.jsx';
+import CategoryBookComponent from '../../components/categoty_book/CategoryBookComponent.jsx';
 
 const HomePage = () => {
   return (
@@ -54,6 +55,32 @@ const HomePage = () => {
             <CategoryButtonComponent />
             <CategoryButtonComponent />
             <CategoryButtonComponent />
+          </div>
+        </div>
+        <div className='content__category-book'>
+          <div className='content__title'>
+            <FolderNotchOpen size={32} />
+            <h3 className='title'>Romance</h3>
+          </div>
+          <div className='content__category-slider'>
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+          </div>
+        </div>
+        <div className='content__category-book'>
+          <div className='content__title'>
+            <FolderNotchOpen size={32} />
+            <h3 className='title'>Adventure</h3>
+          </div>
+          <div className='content__category-slider'>
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
+            <CategoryBookComponent />
           </div>
         </div>
       </main>

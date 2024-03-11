@@ -129,6 +129,17 @@
             margin-left: 0.75rem;
         }
     }
+    &__category-book {
+        margin-top: 10rem;
+    }
+    &__category-slider {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4.5rem;
+        margin-top: 3.25rem;
+    }
 }
 @media only screen and (max-width: 1439px) {
     .content {
