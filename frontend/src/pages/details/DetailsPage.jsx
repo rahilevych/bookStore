@@ -10,7 +10,6 @@ import CartBtn from '../../components/cart_btn/CartBtn';
 const DetailsPage = () => {
   return (
     <div className='container'>
-      <Header />
       <main className='content details'>
         <div className='details__book'>
           <BookComponent />
@@ -46,7 +45,6 @@ const DetailsPage = () => {
           <BooksSlider />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

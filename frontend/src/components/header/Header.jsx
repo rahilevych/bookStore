@@ -1,14 +1,20 @@
-import { logo } from './imports';
 import './Header.scss';
-import { BookmarkSimple, ShoppingCartSimple } from '@phosphor-icons/react';
+import {
+  BookOpen,
+  BookmarkSimple,
+  ShoppingCartSimple,
+} from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className='header'>
-      <div className='header__logo'>
-        <img src={logo} alt='logo' />
-      </div>
+      <Link to='/'>
+        <div className='header__logo'>
+          <p>bookstore</p>
+          <BookOpen size={32} />
+        </div>
+      </Link>
       <div className='header__nav'>
         <Link to='/favorites'>
           <button>

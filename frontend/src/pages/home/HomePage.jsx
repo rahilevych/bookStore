@@ -13,7 +13,6 @@ import BooksSlider from '../../components/books_slider/BooksSlider.jsx';
 const HomePage = () => {
   return (
     <div className='container'>
-      <Header />
       <main className='content home'>
         <div className='home__header'>
           <div className='home__search'>
@@ -77,7 +76,6 @@ const HomePage = () => {
           <BooksSlider />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
