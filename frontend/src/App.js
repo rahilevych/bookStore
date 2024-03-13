@@ -1,6 +1,6 @@
 import HomePage from './pages/home/HomePage';
 import './App.css';
-import './global.scss';
+import '../../frontend/src/assets/styles/global.scss';
 import { Route, Routes } from 'react-router-dom';
 import CatalogPage from './pages/catalog/CatalogPage';
 import FavoritesPage from './pages/favorites/FavoritesPage';

@@ -15,7 +15,19 @@ $bg-btn-color: white;
   font-weight: 500;
   font-style: normal;
 }
-
+body,
+html,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+button,
+a {
+  margin: 0;
+  padding: 0;
+}
 html {
   height: 100vh;
   font-size: 16px;

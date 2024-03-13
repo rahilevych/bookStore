@@ -1,5 +1,4 @@
-@import "../../global";
-
+@import "../../assets/styles/global.scss";
 .footer {
     flex: 0 0 auto;
     width: 100%;
@@ -24,6 +23,7 @@
         background-color: white;
         margin: 0 0.8rem;
         transition: background-color 0.3s ease;
+        cursor: pointer;
         &:hover {
             background-color: $yellow-500;
         }

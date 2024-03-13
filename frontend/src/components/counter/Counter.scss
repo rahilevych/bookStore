@@ -1,0 +1,46 @@
+@import "../../assets/styles/global.scss";
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1rem;
+        height: 1rem;
+        color: $gray-800;
+        background-color: $bg-btn-color;
+        border: 2px solid $gray-800;
+        border-radius: 50%;
+        cursor: pointer;
+        transition:
+            color 0.5s ease,
+            background-color 0.5s ease;
+        &:hover {
+            color: $bg-btn-color;
+            background-color: $blue-500;
+        }
+    }
+    &__plus {
+        padding-top: 2px;
+        padding-left: 0.5px;
+    }
+
+    &__amount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include syne;
+        color: $gray-800;
+        font-size: 1.25rem;
+        width: 3.25rem;
+        height: 2rem;
+        border: 2px solid $gray-800;
+        background-color: $bg-btn-color;
+        border-radius: 10px;
+    }
+}

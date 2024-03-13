@@ -1,4 +1,4 @@
-@import "../../global.scss";
+@import "../../assets/styles/global.scss";
 
 .header {
     display: flex;
@@ -40,6 +40,7 @@
         margin-left: 1.5rem;
         transition: color 0.5s ease;
         color: $gray-800;
+        cursor: pointer;
         &:hover {
             color: $blue-500;
         }
@@ -47,6 +48,7 @@
     &__saved {
         transition: color 0.5s ease;
         color: $gray-800;
+        cursor: pointer;
         &:hover {
             color: $blue-500;
         }

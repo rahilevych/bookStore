@@ -6,6 +6,7 @@ import './DetailsPage.scss';
 import BookComponent from '../../components/book/BookComponent';
 import SaveBtn from '../../components/save_btn/SaveBtn';
 import CartBtn from '../../components/cart_btn/CartBtn';
+import Counter from '../../components/counter/Counter';
 
 const DetailsPage = () => {
   return (
@@ -29,7 +30,7 @@ const DetailsPage = () => {
             </div>
             <div className='details__price'>
               <p>30$</p>
-              <div className='details__amount'></div>
+              <Counter />
             </div>
             <div className='details__purchase'>
               <CartBtn></CartBtn>

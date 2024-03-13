@@ -1,4 +1,4 @@
-@import "../../global.scss";
+@import "../../assets/styles/global.scss";
 .details {
     display: flex;
     flex-direction: column;
@@ -83,6 +83,11 @@
         }
     }
     &__price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
         margin-top: 1.5rem;
         p {
             color: $orange-500;
