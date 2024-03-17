@@ -1,5 +1,5 @@
 import { Book } from '../models/BookModel.js';
-import express from 'express';
+import express, { request, response } from 'express';
 const booksRouter = express.Router();
 
 booksRouter.post('/', async (request, response) => {
@@ -43,4 +43,31 @@ booksRouter.get('/:id', async (request, response) => {
     console.log(error.massege);
   }
 });
+
+booksRouter.put('/:id', async (request, response) => {
+  try {
+    const { id } = request.params;
+    const result = await Book.findByIdAndUpdate(id, request.body);
+    if (!result) {
+      response.status(404).json({ message: 'Book not find' });
+    }
+    return response.status(200).send({ message: 'Book updeteed successfully' });
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+booksRouter.delete('/:id', async (request, response) => {
+  try {
+    const { id } = request.params;
+    const result = await Book.findByIdAndDelete(id);
+    if (!result) {
+      response.status(404).json({ message: 'Book not find' });
+    }
+    return response.status(200).send({ message: 'Book deleted successfully' });
+  } catch (error) {
+    console.log(error.massege);
+    response.status(500).send({ message: error.message });
+  }
+});
+
 export default booksRouter;
