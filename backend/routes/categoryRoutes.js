@@ -17,9 +17,7 @@ categoriesRouter.post('/', async (request, response) => {
 categoriesRouter.get('/', async (request, response) => {
   try {
     const categories = await Category.find({});
-    return response
-      .status(200)
-      .json({ amount: categories.length, data: categories });
+    return response.status(200).json({ data: categories });
   } catch (error) {
     response.status(404).json({ message: 'Data not found' });
   }

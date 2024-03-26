@@ -9,8 +9,36 @@ import CategoryButtonComponent from '../../components/category_button/CategoryBu
 import CategoryBookComponent from '../../components/categoty_book/CategoryBookComponent.jsx';
 import { Link } from 'react-router-dom';
 import BooksSlider from '../../components/books_slider/BooksSlider.jsx';
-
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 const HomePage = () => {
+  const [books, setBooks] = useState([]);
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/books');
+        setBooks(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.log('Error', error);
+      }
+    };
+    fetchBooks();
+  }, []);
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/categories');
+        setCategory(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.log('Error', error);
+      }
+    };
+    fetchCategory();
+  }, []);
+
   return (
     <div className='container'>
       <main className='content home'>
@@ -26,7 +54,6 @@ const HomePage = () => {
                   <Binoculars className='home__icon' size={32} />
                 </button>
               </Link>
-
               <hr />
             </div>
           </div>
@@ -40,11 +67,8 @@ const HomePage = () => {
             <p>Drag to explore</p>
           </div>
           <div className='home__slider'>
-            <BookComponent />
-            <BookComponent />
-            <BookComponent />
-            <BookComponent />
-            <BookComponent />
+            {books &&
+              books.map((book) => <BookComponent key={book._id} book={book} />)}
           </div>
         </div>
         <div className='home__categories'>
@@ -53,12 +77,9 @@ const HomePage = () => {
             <h3 className='title'>Categories</h3>
           </div>
           <div className='home__list'>
-            <CategoryButtonComponent />
-            <CategoryButtonComponent />
-            <CategoryButtonComponent />
-            <CategoryButtonComponent />
-            <CategoryButtonComponent />
-            <CategoryButtonComponent />
+            {category.map((cat) => (
+              <CategoryButtonComponent key={cat._id} cat={cat} />
+            ))}
           </div>
         </div>
         <div className='home__category'>

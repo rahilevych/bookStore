@@ -97,9 +97,11 @@
     }
     &__slider {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        gap: 2rem;
         padding: 4rem 5.4rem;
         border: 2px dashed $gray-600;
         border-radius: 20px;

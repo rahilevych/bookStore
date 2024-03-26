@@ -17,10 +17,6 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/catalog' element={<CatalogPage />} />
-        <Route path='/favorites' element={<FavoritesPage />} />
-        <Route path='/details' element={<DetailsPage />} />
-        <Route path='*' element={<ErrorPage />} />
       </Routes>
       <Footer />
     </div>
