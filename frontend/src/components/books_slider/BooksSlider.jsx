@@ -1,8 +1,9 @@
 import CategoryBookComponent from '../categoty_book/CategoryBookComponent';
 import './BooksSlider.scss';
 const BooksSlider = ({ books, c }) => {
-  const categoryBooks = books.filter((book) => book.categories == c.name);
-  console.log(c.name);
+  const categoryBooks = books.filter((book) =>
+    book.categories.includes(c.name)
+  );
   return (
     <div className='books-slider'>
       {categoryBooks.map((book) => (

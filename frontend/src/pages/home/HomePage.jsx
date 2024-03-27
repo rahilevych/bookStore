@@ -24,8 +24,6 @@ const HomePage = () => {
         ]);
         setBooks(booksResponse.data.data);
         setCategories(categoriesResponse.data.data);
-        console.log(booksResponse.data.data);
-        console.log(categoriesResponse.data.data);
       } catch (error) {
         console.log('Error', error);
       }
