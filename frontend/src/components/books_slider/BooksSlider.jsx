@@ -1,13 +1,13 @@
 import CategoryBookComponent from '../categoty_book/CategoryBookComponent';
 import './BooksSlider.scss';
-const BooksSlider = () => {
+const BooksSlider = ({ books, c }) => {
+  const categoryBooks = books.filter((book) => book.categories == c.name);
+  console.log(c.name);
   return (
     <div className='books-slider'>
-      <CategoryBookComponent />
-      <CategoryBookComponent />
-      <CategoryBookComponent />
-      <CategoryBookComponent />
-      <CategoryBookComponent />
+      {categoryBooks.map((book) => (
+        <CategoryBookComponent key={book._id} book={book} />
+      ))}
     </div>
   );
 };

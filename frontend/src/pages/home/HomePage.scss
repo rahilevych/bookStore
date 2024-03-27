@@ -119,19 +119,6 @@
         gap: 3rem;
         margin-top: 4.5rem;
     }
-    &__title {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: start;
-        width: auto;
-        h3 {
-            margin-left: 0.75rem;
-        }
-    }
-    &__category {
-        margin-top: 10rem;
-    }
 }
 @media only screen and (max-width: 1439px) {
     .content {

@@ -11,34 +11,27 @@ import { Link } from 'react-router-dom';
 import BooksSlider from '../../components/books_slider/BooksSlider.jsx';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import HomeCategoryComponent from '../../components/home_category/HomeCategoryComponent.jsx';
 const HomePage = () => {
   const [books, setBooks] = useState([]);
-  const [category, setCategory] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/books');
-        setBooks(response.data.data);
-        console.log(response.data.data);
+        const [booksResponse, categoriesResponse] = await Promise.all([
+          axios.get('http://localhost:5000/books'),
+          await axios.get('http://localhost:5000/categories'),
+        ]);
+        setBooks(booksResponse.data.data);
+        setCategories(categoriesResponse.data.data);
+        console.log(booksResponse.data.data);
+        console.log(categoriesResponse.data.data);
       } catch (error) {
         console.log('Error', error);
       }
     };
-    fetchBooks();
+    fetchData();
   }, []);
-  useEffect(() => {
-    const fetchCategory = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/categories');
-        setCategory(response.data.data);
-        console.log(response.data.data);
-      } catch (error) {
-        console.log('Error', error);
-      }
-    };
-    fetchCategory();
-  }, []);
-
   return (
     <div className='container'>
       <main className='content home'>
@@ -77,25 +70,14 @@ const HomePage = () => {
             <h3 className='title'>Categories</h3>
           </div>
           <div className='home__list'>
-            {category.map((cat) => (
+            {categories.map((cat) => (
               <CategoryButtonComponent key={cat._id} cat={cat} />
             ))}
           </div>
         </div>
-        <div className='home__category'>
-          <div className='home__title'>
-            <FolderNotchOpen size={32} />
-            <h3 className='title'>Romance</h3>
-          </div>
-          <BooksSlider />
-        </div>
-        <div className='home__category'>
-          <div className='home__title'>
-            <FolderNotchOpen size={32} />
-            <h3 className='title'>Adventure</h3>
-          </div>
-          <BooksSlider />
-        </div>
+        {categories.map((c) => (
+          <HomeCategoryComponent key={c._id} c={c} books={books} />
+        ))}
       </main>
     </div>
   );

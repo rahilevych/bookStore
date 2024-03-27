@@ -33,14 +33,22 @@ booksRouter.get('/', async (request, response) => {
   }
 });
 
-booksRouter.get('/:id', async (request, response) => {
+/*booksRouter.get('/:id/', async (request, response) => {
   try {
     const { id } = request.params;
     const book = await Book.findById(id);
-
     response.status(200).json(book);
   } catch (error) {
     console.log(error.massege);
+  }
+});*/
+booksRouter.get('/:category', async (request, response) => {
+  try {
+    const { category } = request.params;
+    const books = await Book.find({ categories: { $in: [category] } });
+    response.status(200).json({ data: books });
+  } catch (error) {
+    console.log(error.message);
   }
 });
 

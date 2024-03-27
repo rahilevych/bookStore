@@ -1,0 +1,15 @@
+.home {
+    &__category {
+        margin-top: 10rem;
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: auto;
+        h3 {
+            margin-left: 0.75rem;
+        }
+    }
+}
